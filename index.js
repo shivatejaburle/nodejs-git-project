@@ -17,6 +17,7 @@ http
         response.writeHead(200, {
           "Content-Type": "text/html",
         });
+        console.log("Testing My Hooks")
         response.write("<h2>About Page!</h2>");
         response.end();
         break;
