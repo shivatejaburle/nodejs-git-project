@@ -12,13 +12,25 @@ http
         response.end();
         break;
       
-        case "/about":
-          response.writeHead(200, {
-            "Content-Type": "text/html",
-          });
-          response.write("<h2>About Page!</h2>");
-          response.end();
-          break;
+
+      case "/about":
+        response.writeHead(200, {
+          "Content-Type": "text/html",
+        });
+        response.write("<h2>About Page!</h2>");
+        response.end();
+        break;
+
+      default:
+        response.writeHead(404, {
+          "Content-Type": "text/html",
+        });
+        console.log("Seen 404 Page");
+        console.log("404 page has been visited!");
+        response.write("<p>404 Page Not found!</p>");
+        response.end();
+        break;
+
     }
   })
   .listen(8080);
